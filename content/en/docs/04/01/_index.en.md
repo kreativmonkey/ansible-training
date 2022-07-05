@@ -37,7 +37,7 @@ Older versions of Ansible used `with_items` instead of `loop`
 
 ### Task 2
 
-* In your playbook `webserver.yml`, ensure that that the package `firewalld` is installed. Do the installation of `httpd` and `firewalld` in one task. Do you really need to use a loop? Have a look at the description of Ansible's `dnf` module.
+* In your playbook `webserver.yml`, ensure that the package `firewalld` is installed. Do the installation of `httpd` and `firewalld` in one task. Do you really need to use a loop? Have a look at the description of Ansible's `dnf` module.
 
 {{% details title="Solution Task 2" %}}
 ```yaml

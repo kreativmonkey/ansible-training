@@ -49,7 +49,8 @@
             source $VENV_DIR/bin/activate
           fi
           echo "Virtual env is activatet with mkslides."
-          mkslides serve slides/ansible-schulung.md
+          echo " "
+          echo "To serve the slides use `mkslides serve <slides/path>`"
         '';
         };
     };

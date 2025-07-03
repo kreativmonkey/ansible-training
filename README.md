@@ -37,6 +37,43 @@ Run it locally:
 ```bash
 docker run -i -p 8080:8080 puzzle/ansible-techlab
 ```
+## Development Environment with Nix Flakes
+
+This project provides **reproducible development environments** using [Nix flakes](https://nixos.org/download). Two separate dev shells are defined in the `flake.nix` file:
+
+- **hugo**: A shell with all dependencies for the Hugo-based website development
+- **slide**: A shell with all dependencies for building and surfe the slides
+
+Both environments ensure all required tools and libraries are available, regardless of your host system.
+
+### Prerequisites: Install Nix
+
+To use these development shells, you must have **Nix** installed on your system.  
+Follow the official installation guide: [Nix Installation Guide](https://nixos.org/download/).
+
+After installation, make sure to enable flakes by adding the following to your `~/.config/nix/nix.conf`:
+
+```
+experimental-features = nix-command flakes
+```
+
+### Usage
+
+To enter a development shell, run the following commands from the project root:
+
+#### Hugo Environment
+
+```sh
+nix develop .#hugo
+```
+
+#### Slide Environment
+
+```sh
+nix develop .#slide
+```
+
+This will drop you into a shell with all dependencies set up for the respective environment. When you exit the shell, all dependencies are cleaned up automatically.
 
 ## Contributions
 
